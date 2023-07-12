@@ -12,6 +12,9 @@
     "start": "sirv --dev --no-clear --port 3000"
   },
   "devDependencies": {
-    "sirv-cli": "^2.0.2"
+    "dotenv-webpack": "^8.0.1",
+    "sirv-cli": "^2.0.2",
+    "webpack": "^5.88.1",
+    "webpack-cli": "^5.1.4"
   }
 }

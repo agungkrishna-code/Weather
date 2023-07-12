@@ -14,7 +14,6 @@ body {
   background: -webkit-linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9);
   background: linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9);  
 
-  /* background: linear-gradient(45deg, rgba(183,204,246,0.7), rgba(7,43,127,067)); */
   /* background-repeat: no-repeat;
   background-position: center;
   background-size: cover; */
@@ -87,4 +86,55 @@ main {
   justify-content: space-between;
   align-items: center;
   margin: 10px 0;
+  font-size: larger;
+  font-weight: 500;
+}
+
+.next p {
+  margin: 3px 0;
+}
+
+.cast-header, .cast-header-2 {
+  color: aliceblue;
+  background: rgba(254, 189, 132, 0.5);
+  width: max-content;
+  padding: 5px 20px;
+  border-radius: 20px;
+  font-size: 18px;
+  margin-bottom: 5px;
+  text-transform: capitalize;
+}
+
+.cast-header-2 {
+  color: dimgray;
+}
+
+.time, .date {
+  color: rgb(148, 75, 12);
+}
+
+.desc {
+  color: rgb(61, 34, 3);
+}
+
+.divider1, .divider2 {
+  background: rgba(198, 147, 103, 0.5);
+  height: 200px;
+  border-radius: 5px;
+}
+
+.divider2 {
+  height: 5px;
+  width: 30%;
+  margin: 0 auto;
+}
+
+.forecstD {
+  margin: 20px 50px;
+  color: dimgray;
+}
+
+.weekF {
+  display: grid;
+grid-template-columns: repeat(4,1fr);
 }
