@@ -27,6 +27,16 @@ body {
   font-family: 'Karla', sans-serif;
 }
 
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn i {
+  margin-right: 5px;
+}
+
 #input {
   /* outline: none;
   border: none; */
@@ -156,6 +166,14 @@ main {
 
   .header h1 {
     margin-bottom: 0.5rem;
+  }
+
+  .btn {
+    font-size: 14px;
+  }
+
+  .btn i {
+    font-size: 16px; 
   }
 
   #input {
