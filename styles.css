@@ -8,21 +8,18 @@ html {
 }
 
 body {
-  padding: 1rem 5rem;
+  padding: 1rem;
   font-family: 'Roboto', sans-serif;
   background: #2980B9;
   background: -webkit-linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9);
   background: linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9);  
-
-  /* background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover; */
 }
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 1rem;
 }
 
 .header h1 {
@@ -40,7 +37,7 @@ main {
   grid-template-columns: 1fr 5px 1fr;
   grid-column-gap: 25px;
   align-items: center;
-  margin: 0 50px;
+  margin: 0 1rem;
   color: rgb(114, 104, 101);
 }
 
@@ -56,8 +53,6 @@ main {
 .weather img {
   width: 120px;
   height: 120px;
-  /* border-radius: 50%; */
-  /* background: black; */
 }
 
 #temperature {
@@ -94,7 +89,8 @@ main {
   margin: 3px 0;
 }
 
-.cast-header, .cast-header-2 {
+.cast-header,
+.cast-header-2 {
   color: aliceblue;
   background: rgba(254, 189, 132, 0.5);
   width: max-content;
@@ -109,7 +105,8 @@ main {
   color: dimgray;
 }
 
-.time, .date {
+.time,
+.date {
   color: rgb(148, 75, 12);
 }
 
@@ -117,24 +114,85 @@ main {
   color: rgb(61, 34, 3);
 }
 
-.divider1, .divider2 {
-  background: rgba(198, 147, 103, 0.5);
-  height: 200px;
+.divider1,
+.divider2 {
+  background: none;
   border-radius: 5px;
 }
 
 .divider2 {
+  width: 100%;
   height: 5px;
-  width: 30%;
-  margin: 0 auto;
+  margin: 0;
 }
 
 .forecstD {
-  margin: 20px 50px;
+  margin: 20px 1rem;
   color: dimgray;
 }
 
 .weekF {
   display: grid;
-grid-template-columns: repeat(4,1fr);
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Media Queries */
+
+/* Small screens */
+@media (max-width: 576px) {
+  body {
+    padding: 1rem;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .header h1 {
+    margin-bottom: 0.5rem;
+  }
+
+  #input {
+    margin-bottom: 1rem;
+  }
+
+  main {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 5px auto;
+    grid-row-gap: 25px;
+    margin: 0 1rem;
+  }
+
+  .temp-box {
+    margin: 0;
+  }
+
+  .divider1,
+  .divider2 {
+    height: 50px;
+  }
+
+  .forecstD {
+    margin: 1rem;
+  }
+
+  .weekF {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Medium screens */
+@media (min-width: 576px) and (max-width: 992px) {
+  main {
+    margin: 0 2rem;
+  }
+}
+
+/* Large screens */
+@media (min-width: 992px) {
+  main {
+    margin: 0 5rem;
+  }
 }
