@@ -10,9 +10,11 @@ html {
 body {
   padding: 1rem;
   font-family: 'Roboto', sans-serif;
+  /* background: #A0BFE0; */
+
   background: #2980B9;
-  background: -webkit-linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9);
-  background: linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9);  
+  background: -webkit-linear-gradient(to right, #A0BFE0, #6DD5FA, #2980B9);
+  background: linear-gradient(to right, #A0BFE0, #6DD5FA, #2980B9);  
 }
 
 .header {
@@ -81,7 +83,9 @@ main {
 }
 
 #clouds {
+  color: aliceblue;
   font-size: 20px;
+  font-weight: bold;
   background: rgba(153, 205, 50, 0.75);
   padding: 2px 20px;
   border-radius: 15px;
@@ -105,27 +109,26 @@ main {
 .cast-header,
 .cast-header-2 {
   color: aliceblue;
-  background: rgba(254, 189, 132, 0.5);
+  background: rgba(41, 222, 71, 0.5);
+  font-weight: bold;
+  font-weight: bold;
   width: max-content;
   padding: 5px 20px;
   border-radius: 20px;
-  font-size: 18px;
+  font-size: 20px;
   margin-bottom: 5px;
   text-transform: capitalize;
-}
-
-.cast-header-2 {
-  color: dimgray;
 }
 
 .time,
 .date {
   color: rgb(148, 75, 12);
-  font-weight: 400;
+  font-weight: bold;
 }
 
 .desc {
   color: rgb(61, 34, 3);
+  font-weight: bold;
 }
 
 .divider1,

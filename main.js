@@ -13,6 +13,7 @@ window.addEventListener("load", () => {
             .then((res) => res.json())
             .then((data) => {
             console.log(data);
+            weatherReport(data)
             })
             .catch((error) => {
             console.log("Error fetching weather data:", error);
@@ -20,3 +21,13 @@ window.addEventListener("load", () => {
         });
     }
 });
+
+function weatherReport() {
+    var urlcast = `https://api.openweathermap.org/data/2.5/forecast?q=${data.name}&` + `appid=${apiKey}`;
+
+    fetch(urlcast)
+        .then((res) => res.json())
+        .then((data) => {
+            console.log(data);
+    })
+}
