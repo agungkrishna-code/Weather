@@ -53,9 +53,6 @@ document.getElementById('search').addEventListener('click', () => {
                     console.log("Error fetching forecast data:", error);
                 });
         })
-        .catch((error) => {
-            console.log("Error fetching weather data:", error);
-        });
 });
 
 function weatherReport(weatherData, forecastData) {
