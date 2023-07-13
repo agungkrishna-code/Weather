@@ -90,6 +90,7 @@ main {
   padding: 2px 20px;
   border-radius: 15px;
   margin-top: 10px;
+  text-transform: capitalize;
 }
 
 
@@ -122,13 +123,15 @@ main {
 
 .time,
 .date {
-  color: rgb(148, 75, 12);
+  /* color: rgb(148, 75, 12); */
+  color:#4A55A2;
   font-weight: bold;
 }
 
 .desc {
   color: rgb(61, 34, 3);
   font-weight: bold;
+  text-transform: capitalize;
 }
 
 .divider1,
