@@ -128,7 +128,8 @@ main {
   font-weight: bold;
 }
 
-.desc {
+.desc,
+.description {
   color: rgb(61, 34, 3);
   font-weight: bold;
   text-transform: capitalize;
