@@ -32,6 +32,7 @@ window.addEventListener("load", () => {
     }
 });
 
+// search function
 document.getElementById('search').addEventListener('click', () => {
     var place = document.getElementById('input').value;
     var urlsearch = `https://api.openweathermap.org/data/2.5/weather?q=${place}&appid=${myApi()}`;
@@ -55,13 +56,65 @@ document.getElementById('search').addEventListener('click', () => {
         })
 });
 
+// error notification
+document.getElementById('search').addEventListener('click', () => {
+    var place = document.getElementById('input').value;
+    var urlsearch = `https://api.openweathermap.org/data/2.5/weather?q=${place}&appid=${myApi()}`;
+    
+        fetch(urlsearch)
+        .then((res) => {
+            if (!res.ok) {
+            throw new Error("Invalid input or location not found");
+            }
+            return res.json();
+        })
+        .then((weatherData) => {
+            console.log(weatherData);
+            weatherReport(weatherData, null);
+            const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${place}&appid=${myApi()}`;
+            fetch(forecastUrl)
+            .then((res) => {
+                if (!res.ok) {
+                throw new Error("Invalid input or location not found");
+                }
+                return res.json();
+            })
+            .then((forecastData) => {
+                console.log(forecastData);
+                hourForecast(forecastData);
+                dayForecast(forecastData);
+            })
+            .catch((error) => {
+                console.log("Error fetching forecast data:", error);
+                showNotification(error.message);
+            });
+        })
+        .catch((error) => {
+            console.log("Error fetching weather data:", error);
+            showNotification(error.message);
+        });
+});
+
+function showNotification(message) {
+    const notification = document.createElement('div');
+    notification.classList.add('notification');
+    notification.innerText = message;
+    
+    document.body.appendChild(notification);
+    
+    // Remove the notification after 3 seconds
+    setTimeout(() => {
+    document.body.removeChild(notification);
+    }, 3000);
+}
+
 function weatherReport(weatherData, forecastData) {
     document.getElementById('city').innerText = weatherData.name + ',' + weatherData.sys.country;
     document.getElementById('temperature').innerText = Math.floor(weatherData.main.temp - 273.15) + '°C';
     document.getElementById('clouds').innerText = weatherData.weather[0].description;
 
     let icon = weatherData.weather[0].icon;
-    let iconurl = `https://openweathermap.org/img/wn/${icon}.png`;
+    let iconurl = `https://openweathermap.org/img/wn/${icon}@4x.png`;
     document.getElementById('img').src = iconurl;
 }
 
