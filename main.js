@@ -32,6 +32,41 @@ window.addEventListener("load", () => {
     }
 });
 
+// Fetch weather data for geolocation
+document.getElementById('geolocation').addEventListener('click', fetchWeatherByGeolocation);
+function fetchWeatherByGeolocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition((position) => {
+        const lon = position.coords.longitude;
+        const lat = position.coords.latitude;
+
+        const apiKey = myApi();
+        const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+        const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+
+        fetch(weatherUrl)
+            .then((res) => res.json())
+            .then((weatherData) => {
+            console.log(weatherData);
+            fetch(forecastUrl)
+                .then((res) => res.json())
+                .then((forecastData) => {
+                console.log(forecastData);
+                weatherReport(weatherData, forecastData);
+                dayForecast(forecastData);
+                })
+                .catch((error) => {
+                console.log("Error fetching forecast data:", error);
+                });
+            })
+            .catch((error) => {
+            console.log("Error fetching weather data:", error);
+            });
+        });
+    }
+}
+
+
 // search function
 function searchLocation() {
     var place = document.getElementById('input').value;
