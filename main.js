@@ -33,28 +33,36 @@ window.addEventListener("load", () => {
 });
 
 // search function
-document.getElementById('search').addEventListener('click', () => {
+function searchLocation() {
     var place = document.getElementById('input').value;
     var urlsearch = `https://api.openweathermap.org/data/2.5/weather?q=${place}&appid=${myApi()}`;
-
-    fetch(urlsearch)
+    
+        fetch(urlsearch)
         .then((res) => res.json())
         .then((weatherData) => {
             console.log(weatherData);
             weatherReport(weatherData, null);
             const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${place}&appid=${myApi()}`;
             fetch(forecastUrl)
-                .then((res) => res.json())
-                .then((forecastData) => {
-                    console.log(forecastData);
-                    hourForecast(forecastData);
-                    dayForecast(forecastData);
-                })
-                .catch((error) => {
-                    console.log("Error fetching forecast data:", error);
-                });
-        })
-});
+            .then((res) => res.json())
+            .then((forecastData) => {
+                console.log(forecastData);
+                hourForecast(forecastData);
+                dayForecast(forecastData);
+            })
+            .catch((error) => {
+                console.log("Error fetching forecast data:", error);
+            });
+        });
+    }
+    
+    document.getElementById('search').addEventListener('click', searchLocation);
+    
+    document.getElementById('input').addEventListener('keypress', function (event) {
+        if (event.key === 'Enter') {
+        searchLocation();
+        }
+    });
 
 // error notification
 document.getElementById('search').addEventListener('click', () => {
