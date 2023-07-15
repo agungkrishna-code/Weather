@@ -10,11 +10,10 @@ html {
 body {
   padding: 1rem;
   font-family: 'Roboto', sans-serif;
-  /* background: #A0BFE0; */
-
-  background: #2980B9;
+  background: #A0BFE0;
+  /* background: #2980B9;
   background: -webkit-linear-gradient(to right, #A0BFE0, #6DD5FA, #2980B9);
-  background: linear-gradient(to right, #A0BFE0, #6DD5FA, #2980B9);  
+  background: linear-gradient(to right, #A0BFE0, #6DD5FA, #2980B9);   */
 }
 
 .notification {
@@ -147,6 +146,16 @@ main {
   font-size: 20px;
   margin-bottom: 5px;
   text-transform: capitalize;
+}
+
+.templist,
+.weekF {
+  margin-top: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  padding: 20px;
+  background-color: #C5DFF8;
+  backdrop-filter: blur(10px);
 }
 
 .time,
