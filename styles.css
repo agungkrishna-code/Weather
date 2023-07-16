@@ -212,8 +212,15 @@ main {
     margin-bottom: 0.5rem;
   }
 
+  .cast-header,
+  .cast-header-2 {
+    margin: 0 auto;
+  }
+
   .btn {
     font-size: 14px;
+    /* padding: 0.25rem 0.5rem;
+    line-height: 1.5; */
   }
 
   .btn i {
