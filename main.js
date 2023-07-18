@@ -161,6 +161,14 @@ function weatherReport(weatherData, forecastData) {
     document.getElementById('img').src = iconurl;
 }
 
+// Sidenav
+const toggleSidenavButton = document.getElementById('toggleSidenav');
+const sidenav = document.getElementById('mySidenav');
+
+toggleSidenavButton.addEventListener('click', () => {
+    sidenav.classList.toggle('open');
+});
+
 function hourForecast(forecastData) {
     document.querySelector('.templist').innerHTML = '';
     for (let i = 0; i < 5; i++) {
