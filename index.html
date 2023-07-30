@@ -25,18 +25,40 @@
     </div>
     <!-- Header End -->
 
+    <!-- About Us Modal -->
+    <div class="modal fade" id="aboutUsModal" tabindex="-1" aria-labelledby="aboutUsModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="aboutUsModalLabel">About Us <i class="fas fa-info-circle"></i></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>Welcome to Wettervorhersage App!</p>
+            <p>We are Group PRG012.</p>
+            <p>Our Weather Web application is built using the following technologies:</p>
+            <ul>
+              <li><strong>Bootstrap:</strong> We use Bootstrap to create a responsive and visually appealing user interface. It helps us make our application look great on various devices, from mobile phones to desktops.</li>
+              <li><strong>Font Awesome:</strong> Font Awesome icons add a touch of elegance to our app. We use them to enhance the user experience and make it easier for users to understand different elements of the interface.</li>
+              <li><strong>OpenWeatherMap API:</strong> Our application fetches real-time weather data from the OpenWeatherMap API. This allows us to provide accurate weather forecasts, current conditions, and more to our users.</li>
+            </ul>
+            <p>We are constantly working to improve our Weather Web app and add new features to make it more useful and enjoyable for our users. Your feedback and suggestions are always welcome!</p>
+            <p>Thank you for using Wettervorhersage App!</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+        <!-- About Us Modal End -->
+
     <!-- Sidenav -->
     <div class="sidenav" id="mySidenav">
-      <br/>
+      <br>
       <nav>
         <ul>
-          <li><a href="index.html"><i class="fas fa-home"></i><b>&nbsp;&nbsp;Home</b></a></li>
-        </ul>
-        <ul>
-          <li><a href="about_us.html"><i class="fas fa-info-circle"></i><b>&nbsp;&nbsp;About Us</b></a></li>
-        </ul>
-        <ul>
-          <li><a href="contact_us.html"><i class="fas fa-envelope"></i><b>&nbsp;&nbsp;Contact Us</b></a></li>
+          <li><a href="#" data-bs-toggle="modal" data-bs-target="#aboutUsModal"><i class="fas fa-info-circle"></i><b>&nbsp;&nbsp;About Us</b></a></li>
         </ul>
       </nav>
     </div>
