@@ -66,7 +66,6 @@ function fetchWeatherByGeolocation() {
     }
 }
 
-
 // search function
 function searchLocation() {
     var place = document.getElementById('input').value;
