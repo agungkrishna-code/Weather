@@ -1,5 +1,7 @@
 # Wettervorhersage App
 
+Welcome to Wettervorhersage, solution for accurate and user-friendly weather forecasts.
+
 ## Features
 
 - Search Feature
